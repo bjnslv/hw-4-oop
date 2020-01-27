@@ -11,7 +11,9 @@ function Item(name, price, calories) {
 function Drink(drinkType) {
     Item.call(this);
     this.drinkType = drinkType;
-}
+};
+
+Drink.prototype = Object.create(Item.prototype);
 
 Drink.COKE = {
     name: "Coke",
@@ -23,8 +25,6 @@ Drink.COFFEE = {
     price: 80,
     calories: 20
 };
-
-Drink.prototype = Object.create(Item.prototype);
 
 Drink.prototype.getName = function () {
     return this.drinkType.name;
@@ -42,7 +42,9 @@ function Salad(saladType, weight) {
     Item.call(this);
     this.saladType = saladType;
     this.weight = weight;
-}
+};
+
+Salad.prototype = Object.create(Item.prototype);
 
 Salad.CAESAR = {
     name: "Caesar",
@@ -54,8 +56,6 @@ Salad.OLIVIER = {
     price: 50,
     calories: 80
 };
-
-Salad.prototype = Object.create(Item.prototype);
 
 Salad.prototype.getName = function () {
     return this.saladType.name;
@@ -77,7 +77,9 @@ function Hamburger(size, stuffing) {
     Item.call(this);
     this.size = size;
     this.stuffing = stuffing;
-}
+};
+
+Hamburger.prototype = Object.create(Item.prototype);
 
 Hamburger.SIZE_SMALL = {
     name: "Small size",
@@ -104,8 +106,6 @@ Hamburger.STUFFING_POTATO = {
     price: 15,
     calories: 10
 };
-
-Hamburger.prototype = Object.create(Item.prototype);
 
 Hamburger.prototype.getSize = function () {
     return this.size.name;
