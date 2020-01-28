@@ -130,7 +130,7 @@ function Order() {
 
 /* добавить позицию в заказ */
 Order.prototype.addToOrder = function (item) {
-    if (this.isPaid === false) {
+    if (!this.isPaid) {
         this.list.push(item);
     } else {
         console.log("order has already been paid");
@@ -139,7 +139,7 @@ Order.prototype.addToOrder = function (item) {
 
 /* убрать позицию из заказа */
 Order.prototype.removeFromOrder = function (item) {
-    if (this.isPaid === false) {
+    if (!this.isPaid) {
         if (this.list.indexOf(item) !== -1) {
             this.list.splice(this.list.indexOf(item), 1);
         }
