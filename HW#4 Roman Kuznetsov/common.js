@@ -170,27 +170,27 @@ Order.prototype.payForTheOrder = function () {
     this.isPaid = true;
 };
 
-var small_Potato = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_POTATO);
-console.log(small_Potato.getSize() + " with " + small_Potato.getStuffing());
-console.log("price: " + small_Potato.calculatePrice() + ", calories: " + small_Potato.calculateCalories());
+var smallPotato = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_POTATO);
+console.log(smallPotato.getSize() + " with " + smallPotato.getStuffing());
+console.log("price: " + smallPotato.calculatePrice() + ", calories: " + smallPotato.calculateCalories());
 
 var coke = new Drink(Drink.COKE);
 console.log(coke.getName());
 console.log("price: " + coke.calculatePrice() + ", calories: " + coke.calculateCalories());
 
-var olivier_Salad = new Salad(Salad.OLIVIER, 420);
-console.log(olivier_Salad.getName() + " - " + olivier_Salad.getWeight() + "g.");
-console.log("price: " + olivier_Salad.calculatePrice() + ", calories: " + olivier_Salad.calculateCalories());
+var olivierSalad = new Salad(Salad.OLIVIER, 420);
+console.log(olivierSalad.getName() + " - " + olivierSalad.getWeight() + "g.");
+console.log("price: " + olivierSalad.calculatePrice() + ", calories: " + olivierSalad.calculateCalories());
 
-var order_1 = new Order();
+var order1 = new Order();
 
-order_1.addToOrder(small_Potato);
-order_1.addToOrder(coke);
-order_1.addToOrder(small_Potato);
+order1.addToOrder(smallPotato);
+order1.addToOrder(coke);
+order1.addToOrder(smallPotato);
 
-console.log("calories: " + order_1.calculateCalories());
-order_1.payForTheOrder();
-console.log("the total cost: " + order_1.calculatePrice());
-order_1.removeFromOrder(coke);
-order_1.addToOrder(olivier_Salad);
-console.log("the total cost: " + order_1.calculatePrice());
+console.log("calories: " + order1.calculateCalories());
+order1.payForTheOrder();
+console.log("the total cost: " + order1.calculatePrice());
+order1.removeFromOrder(coke);
+order1.addToOrder(olivierSalad);
+console.log("the total cost: " + order1.calculatePrice());
